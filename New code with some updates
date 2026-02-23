@@ -1,0 +1,49 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        int total = 0;// This will store the sum
+        int Avg = 0;// This will store the average
+        int count = 0; // This will store the count
+        boolean overallPass = true;
+
+        for (int i = 1; i <= 5; i++) {
+            System.out.print("Subject " + i + ": ");
+            int marks = sc.nextInt();
+            count++;
+
+            if (marks>= 90) {
+                System.out.println( "SUBJECT" + i + "Passed with grade A");
+            }
+            else if (marks>= 75) {
+                System.out.println("SUBJECT" + i + "Passed with grade B");
+
+            } else if (marks>= 60) {
+                System.out.println("SUBJECT" + i + "Passed with grade c");
+            } else {
+                System.out.println("SUBJECT" + i + "Result is failed");
+            }
+            if (marks < 60) {
+                overallPass = false;
+            }
+
+            total += marks;
+
+        }
+
+        if (overallPass) {
+            System.out.println("Overall Result: PASS");
+        } else {
+            System.out.println("Overall Result: FAIL");
+        }
+
+        double avg = (double) total / count;
+
+
+        System.out.println("The total sum of all subjects is: " + total);
+        System.out.println("The average sum of all subjects is: " + Avg);
+
+        sc.close();
+    }
+}
